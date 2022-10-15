@@ -1,0 +1,21 @@
+@use '../Global/global-rules' as *;
+@use '../Global/variables' as *;
+@use '../Global/placeholders' as *;
+
+/* Start Clients Styling:- */
+
+.clients {
+    padding: 100px 0;
+    background-color: $main-color;
+    .container {
+        @extend %grid-200-30;
+        align-items: baseline;
+        div {
+            max-width: 150px;
+            margin: 0 auto;
+        }
+    }
+}
+
+
+/* End Clients Styling */

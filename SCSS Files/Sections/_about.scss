@@ -1,0 +1,65 @@
+@use '../Global/global-rules' as *;
+@use './Global/variables' as *;
+@use './Global/placeholders' as *;
+
+/* Start About Styling:- */
+
+.about {
+    padding: $up-down-padding 0;
+    background-color: $sec-background-color;
+    .container {
+        @extend %flex-center;
+        gap: 30px;
+        @media (max-width: 767px) {
+            flex-direction: column;
+            gap: $up-down-padding;
+        }
+        .left {
+            width: calc(50% - 20px);
+            @media (max-width: 767px) {
+                width: 100%;
+            }
+            h1 {
+                font-family: "Playfair Display", serif;
+                margin: 0;
+            }
+            p {
+                margin: 0 {
+                    top: 30px;
+                    bottom: 30px;
+                }
+                line-height: 1.8;
+            }
+        }
+        .right {
+            &::before {
+                content: "";
+                width: 90%;
+                height: calc(100% - 40px);
+                position: absolute;
+                top: 35px;
+                left: 0;
+                border: 3px solid $sec-color;
+                opacity: 0.1;
+                z-index: -1;
+                @media (max-width: 767px) {
+                    width: 90%;
+                }
+            }
+            width: 50%;
+            position: relative;
+            z-index: 1;
+            @media (max-width: 767px) {
+                width: 100%;
+            }
+            img {
+                margin-bottom: 10%;
+                width: 90%;
+                margin-left: 10%;
+            }
+        }
+    }
+}
+
+
+/* End About Styling */

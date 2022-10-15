@@ -1,0 +1,117 @@
+@use './variables' as *;
+%transition {
+    transition-duration: 0.3s;
+    transition-delay: 0s;
+}
+
+%reset {
+    margin: 0;
+    padding: 0;
+}
+
+%link {
+    color: $black-color;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+%grid-200-30 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: $sec-element-padding * 3;
+}
+
+%grid-250-30 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: $sec-element-padding * 3;
+}
+
+%grid-400-30 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: $sec-element-padding * 3;
+}
+
+%flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+%inline-flex-center {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+%flex-center-h {
+    @extend %flex-center;
+    flex-direction: column;
+}
+
+%border-radius-50 {
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+
+%translate-50 {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+}
+
+%social-media-50 {
+    margin-top: $up-down-padding;
+    a {
+        @extend %inline-flex-center;
+        width: 40px;
+        height: 40px;
+        background-color: transparent;
+        margin-top: -30px;
+        @extend %border-radius-50;
+        .social-icon {
+            color: $white-color;
+            font-size: 1.2rem;
+        }
+        &:hover {
+            background-color: $white-color;
+            .social-icon {
+                color: $main-text-color;
+            }
+        }
+    }
+}
+
+%social-media {
+    margin-top: $up-down-padding;
+    a {
+        @extend %inline-flex-center;
+        width: 40px;
+        height: 40px;
+        background-color: $white-color;
+        margin-top: -30px;
+        border-radius: 10px;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        -ms-border-radius: 10px;
+        -o-border-radius: 10px;
+        .social-icon {
+            color: #212135;
+            font-size: 1.2rem;
+        }
+        &:hover {
+            background-color: $main-color;
+            .social-icon {
+                color: $main-text-color;
+            }
+        }
+    }
+}

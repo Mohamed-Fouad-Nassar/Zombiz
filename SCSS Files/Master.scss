@@ -1,0 +1,36 @@
+// Global Rules 
+@use './Global/global-rules' as *;
+//  Global Variables
+@use './Global/variables' as *;
+// Global Placeholders
+@use './Global/placeholders' as *;
+// Header Styling:-
+@use './Sections/header';
+// Start Main Styling:-
+// Landing Styling:-
+@use './Sections/landing';
+// Brief Styling:-
+@use './Sections/brief';
+// About Styling:-
+@use './Sections/about';
+// Services Styling:-
+@use './Sections/services';
+// Stats Styling:-
+@use './Sections/stats';
+// Projects Styling:-
+@use './Sections/projects';
+// Team Styling:-
+@use './Sections/team';
+// Plans Styling:-
+@use './Sections/plans';
+// Testimonials Styling:-
+@use './Sections/testimonials';
+// Clients Styling:-
+@use './Sections/clients';
+// News Styling:-
+@use './Sections/news';
+// Contact Styling:-
+@use './Sections/contact';
+// End Main Styling:-
+// Footer Styling:-
+@use './Sections/footer';

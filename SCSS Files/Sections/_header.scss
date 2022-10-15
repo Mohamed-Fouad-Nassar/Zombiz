@@ -1,0 +1,131 @@
+@use '../Global/global-rules' as *;
+@use './Global/variables' as *;
+@use './Global/placeholders' as *;
+
+/* Start Header Styling:- */
+
+header {
+    padding: $main-element-padding 0;
+    background-color: $main-color;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    .container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .logo {
+            width: 120px;
+            @media (max-width: 991px) {
+                width: 100px;
+            }
+        }
+        nav {
+            button {
+                background-color: transparent;
+                border: none;
+                outline: none;
+                .icon {
+                    display: none;
+                    @media (max-width: 767px) {
+                        display: block;
+                    }
+                    a {
+                        i {
+                            font-size: 2rem;
+                            color: $white-color;
+                        }
+                    }
+                    &:hover a>i {
+                        color: $main-para-color;
+                    }
+                }
+                &:hover {
+                    .links ul {
+                        top: 0px;
+                    }
+                }
+                .links {
+                    ul {
+                        li {
+                            a {
+                                @extend %flex-center;
+                                width: 80px;
+                                height: 60px;
+                                font-size: 1.2rem;
+                                .nav-icon {
+                                    margin-right: 10px;
+                                    font-size: 1.2rem;
+                                    @media (max-width: 991px) {
+                                        font-size: 1.1 rem;
+                                    }
+                                }
+                                span {
+                                    display: none;
+                                }
+                                @media (max-width: 991px) {
+                                    width: 60px;
+                                    font-size: 1rem;
+                                }
+                            }
+                            &:nth-last-of-type(2) a {
+                                padding-left: 30px;
+                            }
+                            &:last-of-type a {
+                                width: 30px;
+                            }
+                        }
+                        @media (max-width: 767px) {
+                            flex-direction: column;
+                            background-color: $main-color;
+                            padding: $up-down-padding $sec-element-padding;
+                            position: absolute;
+                            top: -700px;
+                            left: 0;
+                            width: 100%;
+                            min-height: auto;
+                            z-index: -5;
+                            li {
+                                width: 100%;
+                                padding: $main-element-padding $up-down-padding;
+                                &:not(:first-of-type) {
+                                    border-top: 1px solid $main-text-color;
+                                }
+                                &:nth-last-child(2) a {
+                                    padding: 0;
+                                }
+                                a {
+                                    height: auto;
+                                    padding: 0;
+                                    margin: 0;
+                                    width: 100%;
+                                    font-size: 1.2rem;
+                                    justify-content: flex-start;
+                                    align-items: baseline;
+                                    span {
+                                        display: block;
+                                        color: $white-color;
+                                    }
+                                    &:hover {
+                                        margin-left: $sec-element-padding;
+                                    }
+                                    &:hover span {
+                                        color: $main-text-color;
+                                    }
+                                }
+                                @media (max-width: 575px) {
+                                    padding: $main-element-padding $sec-element-padding;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+/* End Header Styling */

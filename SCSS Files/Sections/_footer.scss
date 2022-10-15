@@ -1,0 +1,163 @@
+@use '../Global/global-rules' as *;
+@use '../Global/variables' as *;
+@use '../Global/placeholders' as *;
+
+/* Start Footer Styling:- */
+
+footer {
+    padding: $up-down-padding 0 0;
+    background-color: #212135;
+    .container {
+        @extend %grid-250-30;
+        padding-bottom: $up-down-padding;
+        @media (max-width: 767px) {
+            text-align: center;
+            gap: $up-down-padding;
+        }
+        h1 {
+            font: {
+                family: "Playfair Display", serif;
+                size: 1.6rem;
+                weight: 400;
+            }
+            color: $white-color;
+            margin: 0 {
+                bottom: 20px;
+            }
+        }
+        .info {
+            .image {
+                max-width: 120px;
+                @media (max-width: 767px) {
+                    margin: 0 auto;
+                }
+            }
+            p {
+                color: $white-color;
+                margin: 0 {
+                    top: 30px;
+                    bottom: 20px;
+                }
+            }
+            .social-media {
+                @extend %social-media;
+            }
+        }
+        .links {
+            ul {
+                flex-direction: column;
+                li {
+                    width: 100%;
+                    &:not(:first-of-type) {
+                        padding: 0;
+                        border-top: 1px solid $white-color;
+                    }
+                    a {
+                        display: block;
+                        padding: 10px 0;
+                        margin-left: 10px;
+                        color: $light-color;
+                        &:hover {
+                            margin-left: 20px;
+                            color: $main-color;
+                        }
+                    }
+                }
+            }
+        }
+        .newsletter {
+            article {
+                a {
+                    p {
+                        color: $light-color;
+                        margin: 0 {
+                            bottom: 10px;
+                        }
+                        line-height: 1.8;
+                    }
+                    &:hover p {
+                        color: $main-color;
+                    }
+                }
+                span {
+                    font-size: 0.8rem;
+                    color: $sec-color;
+                }
+            }
+            hr {
+                margin: $up-down-padding / 2 0;
+                color: $light-color;
+            }
+        }
+        .subscribe {
+            span {
+                display: block;
+                margin-bottom: $up-down-padding / 2;
+                line-height: 1.8;
+                color: $white-color;
+            }
+            form {
+                @extend %flex-center;
+                @media (max-width: 450px) {
+                    flex-direction: column;
+                }
+                input {
+                    padding: 20px 0;
+                    outline: none;
+                    border: 1px solid;
+                    &[type="text"] {
+                        width: calc(100% - 60px);
+                        padding: {
+                            right: 10px;
+                            left: 10px;
+                        }
+                        border-color: #3d3d4d;
+                        background-color: #3d3d4d;
+                        caret-color: $sec-color;
+                        color: $main-color;
+                        @media (max-width: 450px) {
+                            width: 100%;
+                            margin-bottom: 10px;
+                        }
+                    }
+                    &[type="submit"] {
+                        width: 60px;
+                        border-color: $main-color;
+                        background-color: $main-color;
+                        @media (max-width: 450px) {
+                            width: 100%;
+                        }
+                        &:hover {
+                            border-color: $sec-color;
+                            background-color: $sec-color;
+                            color: $white-color;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .rights {
+        padding: $up-down-padding - 20px 0;
+        background-color: #1a1a2a;
+        .container {
+            padding: 0;
+            p {
+                font-weight: 200;
+                color: $white-color;
+                margin: 0;
+                a,
+                span {
+                    font-weight: 400;
+                    color: $main-color;
+                }
+                a:hover {
+                    color: $sec-color;
+                }
+            }
+        }
+    }
+}
+
+
+/* End Footer Styling */

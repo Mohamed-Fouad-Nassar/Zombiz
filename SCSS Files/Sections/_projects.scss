@@ -1,0 +1,103 @@
+@use '../Global/global-rules' as *;
+@use '../Global/variables' as *;
+@use '../Global/placeholders' as *;
+
+/* Start Stats Styling:- */
+
+.projects {
+    padding: $up-down-padding 0;
+    .container {
+        .head {
+            max-width: 400px;
+            text-align: start;
+            margin: initial;
+        }
+        .content {
+            .links {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: $up-down-padding / 2;
+                padding-bottom: $up-down-padding;
+                @media (max-width: 991px) {
+                    grid-template-columns: repeat(2, 1fr);
+                }
+                @media (max-width: 575px) {
+                    grid-template-columns: repeat(1, 1fr);
+                }
+                article {
+                    &::before {
+                        content: "";
+                        height: 0;
+                        width: 0;
+                        background-color: $transparent-color;
+                        position: absolute;
+                        @extend %translate-50;
+                        z-index: 2;
+                    }
+                    &:first-of-type {
+                        grid-row: span 2;
+                    }
+                    overflow: hidden;
+                    position: relative;
+                    z-index: 1;
+                    &:hover::before {
+                        width: 100%;
+                        height: 100%;
+                    }
+                    img {
+                        height: 100%;
+                    }
+                    &:hover img {
+                        transform: scale(1.2);
+                        -webkit-transform: scale(1.2);
+                        -moz-transform: scale(1.2);
+                        -ms-transform: scale(1.2);
+                        -o-transform: scale(1.2);
+                    }
+                    div {
+                        position: absolute;
+                        @extend %translate-50;
+                        z-index: 3;
+                        opacity: 0;
+                        a {
+                            display: block;
+                            text-align: center;
+                            i {
+                                font-size: 2rem;
+                                color: $white-color;
+                            }
+                            span {
+                                margin: {
+                                    top: $main-element-padding;
+                                    bottom: 15px;
+                                }
+                                font-size: 1.5rem;
+                            }
+                            &:hover i,
+                            &:hover span {
+                                color: $light-color;
+                            }
+                        }
+                        span {
+                            display: block;
+                            color: $white-color;
+                            font-size: 0.9rem;
+                            text-align: center;
+                        }
+                    }
+                    &:hover div {
+                        opacity: 1;
+                    }
+                }
+            }
+            .btn {
+                input {
+                    margin: 0 auto;
+                }
+            }
+        }
+    }
+}
+
+
+/* End Stats Styling */

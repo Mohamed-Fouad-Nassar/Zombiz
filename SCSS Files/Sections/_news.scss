@@ -1,0 +1,98 @@
+@use '../Global/global-rules' as *;
+@use '../Global/variables' as *;
+@use '../Global/placeholders' as *;
+
+/* Start News Styling:- */
+
+.news {
+    padding: $up-down-padding 0;
+    background-color: $sec-background-color;
+    .container {
+        .content {
+            @extend %grid-250-30;
+            padding-bottom: $up-down-padding;
+            article {
+                box-shadow: $hovered-box-shadow;
+                .image {
+                    &::before {
+                        content: '';
+                        width: 0;
+                        height: 0;
+                        position: absolute;
+                        @extend %translate-50;
+                        background-color: $transparent-color;
+                        z-index: 1;
+                    }
+                    position: relative;
+                    overflow: hidden;
+                    z-index: 2;
+                    &:hover img {
+                        transform: scale(1.2);
+                        -webkit-transform: scale(1.2);
+                        -moz-transform: scale(1.2);
+                        -ms-transform: scale(1.2);
+                        -o-transform: scale(1.2);
+                    }
+                    &:hover div {
+                        opacity: 1;
+                    }
+                    &:hover::before {
+                        width: 100%;
+                        height: 100%;
+                    }
+                    div {
+                        position: absolute;
+                        @extend %translate-50;
+                        z-index: 3;
+                        opacity: 0;
+                        a {
+                            i {
+                                font-size: 2rem;
+                                color: $white-color;
+                            }
+                            &:hover {
+                                i {
+                                    color: $main-text-color;
+                                }
+                            }
+                        }
+                    }
+                }
+                .data {
+                    padding: 20px;
+                    a {
+                        h3 {
+                            font: {
+                                weight: 600;
+                                size: 1.3rem;
+                                style: italic;
+                                family: "Playfair Display", serif;
+                            }
+                            margin: 0 {
+                                bottom: 20px;
+                            }
+                        }
+                        &:hover h3 {
+                            color: $main-color;
+                        }
+                    }
+                    p {
+                        font-size: 0.9rem;
+                        margin: 0;
+                        span {
+                            color: $main-color;
+                        }
+                    }
+                }
+            }
+        }
+        .btn {
+            input[type="button"] {
+                margin: 0 auto;
+            }
+        }
+    }
+}
+
+
+/* End News Styling */

@@ -1,0 +1,68 @@
+@use '../Global/global-rules' as *;
+@use '../Global/variables' as *;
+@use '../Global/placeholders' as *;
+
+/* Start Team Styling:- */
+
+.team {
+    padding: $up-down-padding 0;
+    background-color: $sec-color;
+    .container {
+        .head {
+            max-width: 400px;
+            text-align: start;
+            margin: initial;
+            h1,
+            p {
+                color: $white-color;
+            }
+        }
+        .content {
+            @extend %grid-250-30;
+            article {
+                overflow: hidden;
+                position: relative;
+                div {
+                    width: 100%;
+                    background-color: $transparent-color;
+                    padding: $main-element-padding;
+                    position: absolute;
+                    bottom: -40px;
+                    left: 0;
+                    color: $white-color;
+                    span {
+                        color: $white-color;
+                        font-weight: 700;
+                        font-size: 0.9rem;
+                    }
+                    p {
+                        color: $white-color;
+                        font-size: 0.9rem;
+                        font-weight: 600;
+                        margin: 0 {
+                            top: 5px;
+                            bottom: 5px;
+                        }
+                    }
+                    a {
+                        font-weight: 600;
+                        font-size: 0.8rem;
+                        color: $main-color;
+                        &:hover {
+                            color: $main-text-color;
+                        }
+                    }
+                }
+                &:hover div {
+                    margin-bottom: 40px;
+                }
+                img {
+                    height: 100%;
+                }
+            }
+        }
+    }
+}
+
+
+/* End Team Styling */

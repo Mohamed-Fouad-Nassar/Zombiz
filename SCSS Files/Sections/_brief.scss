@@ -1,0 +1,17 @@
+@use '../Global/global-rules' as *;
+@use './Global/variables' as *;
+@use '../Global/placeholders' as *;
+
+/* Start Brief Styling:- */
+
+.brief {
+    padding: $up-down-padding 0;
+    .container {
+        .content {
+            @extend %grid-200-30;
+        }
+    }
+}
+
+
+/* End Brief Styling */
